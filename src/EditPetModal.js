@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import PetForm from './PetForm'
+import PetForm from './PetForm';
 
 const EditPetModal = ({ pet, onCancel, onSave }) => {
     return (
@@ -13,6 +13,6 @@ const EditPetModal = ({ pet, onCancel, onSave }) => {
                 onCancel={onCancel}
                 onSave={onSave} />
         </Modal>
-    )
-}
-export default EditPetModal
+    );
+};
+export default EditPetModal;

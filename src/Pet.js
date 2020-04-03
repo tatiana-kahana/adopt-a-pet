@@ -35,17 +35,10 @@ const Pet = ({ pet, onEdit, onRemove }) => {
                             <span role="img" aria-label="adopt this pet">Adopt</span>
                         </Button>
                     </Col>
-
                 </Row>
-
-
-
-
             </CardBody>
-
-
         </>
-    )
-}
+    );
+};
 
-export default Pet
+export default Pet;

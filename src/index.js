@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
-import Modal from 'react-modal'
+import Modal from 'react-modal';
 import Pet from './Pet';
 import EditPetModal from './EditPetModal';
 import NewPetModal from './NewPetModal';
@@ -16,7 +16,7 @@ import {
 const App = () => {
     const [pets, setPets] = useState([]);
     const [isNewPetOpen, setNewPetOpen] = useState(false);
-    const [currentPet, setCurrentPet] = useState(null)
+    const [currentPet, setCurrentPet] = useState(null);
     const [isLoading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -43,8 +43,6 @@ const App = () => {
             .finally(() => setLoading(false))
     }, []);
 
-    // console.log(isNewPetOpen)
-
 
     const addPet = async pet => {
         return createPet(pet)
@@ -53,7 +51,7 @@ const App = () => {
                     ...pets,
                     newPet
                 ])
-                setNewPetOpen(false)
+                setNewPetOpen(false);
             });
     };
 
@@ -64,8 +62,8 @@ const App = () => {
                     pets.map(pet =>
                         pet.id === updatedPet.id ? updatedPet : pet))
                 setCurrentPet(null)
-            })
-    }
+            });
+    };
 
     const removePet = byePet => {
         const result = window.confirm(`Are you sure you want to adopt ${byePet.name}`)
@@ -74,16 +72,15 @@ const App = () => {
                 .then(() => {
                     setPets(pets =>
                         pets.filter(pet => pet.id !== byePet.id))
-                })
-        }
-    }
+                });
+        };
+    };
+
     return (
         <Container>
-
             <Jumbotron>
                 <h1 className="display-4 text-center">Adopt-a-Pet</h1>
             </Jumbotron>
-
             <Row>
                 {
                     isLoading ? (
@@ -115,7 +112,6 @@ const App = () => {
                             </Col>
                         )}
             </Row>
-
             {isNewPetOpen &&
                 (<NewPetModal
                     onCancel={() => setNewPetOpen(false)}
@@ -136,7 +132,4 @@ const App = () => {
 const el = document.querySelector('#root');
 Modal.setAppElement(el)
 
-ReactDOM.render(
-    <App />,
-    el
-)
+ReactDOM.render(<App />, el);

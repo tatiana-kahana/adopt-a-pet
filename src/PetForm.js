@@ -12,7 +12,7 @@ export default function PetForm({ pet, onSave, onCancel }) {
     const [kind, setKind] = useState(initialPet.kind);
     const [photo, setPhoto] = useState(initialPet.photo);
     const [errors, setErrors] = useState(null);
-    const [saving, setSaving] = useState(false)
+    const [saving, setSaving] = useState(false);
 
     const photoInput = useRef();
 
@@ -23,8 +23,8 @@ export default function PetForm({ pet, onSave, onCancel }) {
 
         if (file) {
             const reader = new FileReader();
-            reader.onloadend = () => setPhoto(reader.result)
-            reader.readAsDataURL(file)
+            reader.onloadend = () => setPhoto(reader.result);
+            reader.readAsDataURL(file);
         }
     }
     const submit = e => {
@@ -110,8 +110,7 @@ export default function PetForm({ pet, onSave, onCancel }) {
                 </Button>
                     </Col>
                 </FormGroup>
-
             </Form>
-        </div >
-    )
-}
+        </div>
+    );
+};
